@@ -5,21 +5,22 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Author
+namespace Literature
+
 {
     class Program
     {
         static void Main(string[] args)
         {
             Book[] books = new Book[2];
-            books[0] = new Book("aapinen", "jesse", "otava", 100);
+            books[0] = new Book("Aapinen", "Janne", "Otava", 100);
 
             books[1] = new Book("Osakesäästämisen abc", "Janne", "otava", 30);
 
 
             Console.WriteLine("Anna kirjan nimi");
 
-            
+
             int i = 0;
             string Search = Console.ReadLine();
             do
@@ -42,8 +43,16 @@ namespace Book_Author
             Console.WriteLine("Aapisen hinta on:");
             System.Console.WriteLine(books[0].Price);
 
-            Console.WriteLine($"Aapisen kirjoittaja on: {books[0].Author}");
+            Console.WriteLine($"Aapisen kirjoittaja on: {books[0].Author}\nPress any key to continue");
 
+            Console.ReadKey();
+            Console.Clear();
+
+            Author author1 = new Author("Janne", "1.7.1995", books[0] );
+
+            Console.WriteLine("Kirjailijan Janne tiedot\nPress any key to continue");
+            Console.ReadKey();
+            author1.Printinfo();
             Console.ReadKey();
 
         }

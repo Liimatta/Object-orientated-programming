@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Author
+namespace Literature
 {
     class Book
     {
@@ -42,7 +42,7 @@ namespace Book_Author
 
         public void ChangeTheme()
         {
-            Console.WriteLine("Anna aapiselle uusi teema");
+            Console.WriteLine("Anna Aapiselle uusi teema");
             string newTheme = Console.ReadLine();
             ThemeName = newTheme;
             Console.WriteLine($"Aapisen uusi teema on: {ThemeName}");
