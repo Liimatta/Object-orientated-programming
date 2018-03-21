@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    interface IProduct
+    public interface IProduct
     {
         string Getproduct();
         

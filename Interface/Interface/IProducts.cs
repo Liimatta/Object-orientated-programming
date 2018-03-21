@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    interface IProducts:IProduct
+    public interface IProducts:IProduct
     {
-        void AddProduct(Product product);
+        void AddProduct();
 
         void PrintProducts();
     }

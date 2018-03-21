@@ -27,36 +27,37 @@ namespace Interface
             return "ToString";
         }
 
-        void AddCustomer()
+        public void AddCustomer()
         {
 
             storeCustomers[0].name = Console.ReadLine();
         }
-        void PrintCustomers()
+        public void PrintCustomers()
         {
             Console.WriteLine("Asiakkaiden määrä: 1");
             Console.WriteLine($"{storeCustomers[0]}");
             Console.WriteLine(((ICustomer)storeCustomers[0]).CountBonus());
         }
-        void AddProduct(Product product)
+        public void AddProduct()
         {
             Console.WriteLine("Anna tuote");
-            storeProducts[0].name = Console.ReadLine();
+            string prodname = Console.ReadLine();
+            storeProducts[0].name = prodname;
             Console.WriteLine("Anna määrä");
             storeProducts[0].amount = Convert.ToInt32(Console.ReadLine());
         }
 
-        string Counttotalvalue()
+        public string Counttotalvalue()
         {
             double tv = storeProducts[0].price * storeProducts[0].amount;
             return $"{tv}";
             
         }
-        string Getproduct()
+        public string Getproduct()
         {
             return $"{storeProducts[0]}";
         }
-        void PrintProducts()
+        public void PrintProducts()
         {
             int p = 0;
             do

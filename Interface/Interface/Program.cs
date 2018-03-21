@@ -58,7 +58,8 @@ namespace Interface
             Console.Clear();
             Console.WriteLine("Osa 4");
             Store JannenValinta = new Store("jannenValinta", 200000);
-            
+            JannenValinta.AddProduct();
+            JannenValinta.AddCustomer();
 
 
             
