@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    interface IProduct
+    interface IProducts:IProduct
     {
-        string Getproduct();
-        
-        string Counttotalvalue();
+        void AddProduct(Product product);
 
-        
-
+        void PrintProducts();
     }
 }
