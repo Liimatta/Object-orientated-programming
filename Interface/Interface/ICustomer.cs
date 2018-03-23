@@ -8,7 +8,7 @@ namespace Interface
 {
     interface ICustomer
     {
-        string GetCustomer();
-        string CountBonus();
+        void GetCustomer();
+        void CountBonus();
     }
 }

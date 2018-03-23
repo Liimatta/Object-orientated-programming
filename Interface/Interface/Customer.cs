@@ -17,32 +17,32 @@ namespace Interface
             this.shoppings = shoppings;
         }
 
-        string ICustomer.CountBonus()
+        public void CountBonus()
         {
             if (shoppings<=1000)
             {
                 double bonus = 0.02 * shoppings;
-                return $"{bonus}";
+                Console.WriteLine(bonus);
             }
-            if (shoppings < 2000)
+            if (shoppings >1000 && shoppings < 2000)
             {
                 double bonus = 0.03 * shoppings;
-                return $"{bonus}";
+                Console.WriteLine(bonus);
             }
-            else
+            if (shoppings >2000)
             {
                 double bonus = 0.05 * shoppings;
-                return $"{bonus}";
+                Console.WriteLine(bonus);
             }
                     
         }
-        string ICustomer.GetCustomer()
+        public void GetCustomer()
         {
             string search = Console.ReadLine();
             if (this.name == search)
-                return $"{this.name}";
+                Console.WriteLine(this.name);
             else
-                return null;
+                Console.WriteLine("");
         }
         public string ToString()
         {

@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    public class Store:ICustomers,IProducts
+    class Store:ICustomers,IProducts
     {
         public string name;
         public double revenue;
-
-        Customer[] storeCustomers = new Customer[3];
-
-        Product[] storeProducts = new Product[3];
+        public List<Product> products;
+        public List<Customer> customers;
 
         public Store(string name, double revenue)
         {
             this.name = name;
             this.revenue = revenue;
-
+            
         }
 
         public string ToString()
@@ -27,48 +25,70 @@ namespace Interface
             return "ToString";
         }
 
-        public void AddCustomer()
-        {
 
-            storeCustomers[0].name = Console.ReadLine();
-        }
         public void PrintCustomers()
         {
-            Console.WriteLine("Asiakkaiden määrä: 1");
-            Console.WriteLine($"{storeCustomers[0]}");
-            Console.WriteLine(((ICustomer)storeCustomers[0]).CountBonus());
+            int i = 0;
+            foreach (Customer cus in customers)
+            {
+                i++;
+            }
+            Console.WriteLine($"Asiakkaiden lukumäärä: {i}");
+            int k = 0;
+            do
+            {
+                Console.WriteLine($"Asiakas: {customers[k].name} \nOstokset: {customers[k].shoppings}");
+                Console.Write("Bonus:");
+                customers[k].CountBonus();
+                Console.WriteLine();
+                k++;
+
+            }
+            while (k < i);
+            Console.ReadKey();
         }
-        public void AddProduct()
+
+        public void AddProduct(List<Product> product)
         {
-            Console.WriteLine("Anna tuote");
-            string prodname = Console.ReadLine();
-            storeProducts[0].name = prodname;
-            Console.WriteLine("Anna määrä");
-            storeProducts[0].amount = Convert.ToInt32(Console.ReadLine());
+            products = product ;
         }
 
         public string Counttotalvalue()
         {
-            double tv = storeProducts[0].price * storeProducts[0].amount;
+            double tv = products[0].price * products[0].amount;
             return $"{tv}";
             
         }
         public string Getproduct()
         {
-            return $"{storeProducts[0]}";
+            return $"{products[0]}";
         }
         public void PrintProducts()
         {
-            int p = 0;
+            int i = 0;
+            foreach (Product prod in products)
+            {
+                i++;
+            }
+            Console.WriteLine($"Tuotteiden lukumäärä: {i}");
+            int k = 0;
             do
             {
-                Console.WriteLine($"Tuotteiden määrä: {storeProducts[p].amount}");
-                Console.WriteLine($"Tuote: {storeProducts[p].name}");
-                Console.WriteLine("Tuotteiden kokonaisarvo:");
-                Console.WriteLine(((IProduct)storeProducts[p]).Counttotalvalue());
-                p++;
+                Console.WriteLine($"Tuote: {products[k].name} \nMäärä: {products[k].amount} \nHinta: {products[k].price}");
+                Console.Write("Yhteisarvo:");
+                Console.WriteLine(products[k].Counttotalvalue());
+                Console.WriteLine();
+                k++;
+
             }
-            while (p < 1);
+            while (k < i);
+            Console.ReadKey();
+        }
+
+        public void AddCustomer(List<Customer> customer)
+        {
+            customers = customer ;
+
         }
         
     }

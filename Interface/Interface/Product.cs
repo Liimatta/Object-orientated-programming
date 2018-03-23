@@ -11,23 +11,6 @@ namespace Interface
         public string name;
         public double price;
         public int amount;
-        string IProduct.Counttotalvalue()
-        {
-            double totalvalue = price * amount;
-            return $"{totalvalue}";
-        }
-        string IProduct.Getproduct()
-        {
-            string search = Console.ReadLine();
-            if (this.name == search)
-                return $"{this.name}";
-            else
-                return null;
-            
-        }
-
-
-        
 
         public Product(string name, double price, int amount)
         {
@@ -40,6 +23,21 @@ namespace Interface
         {
             return "ToString";
         }
+        public string Counttotalvalue()
+        {
+            double totalvalue = price * amount;
+            return $"{totalvalue}";
+        }
+        public string Getproduct()
+        {
+            string search = Console.ReadLine();
+            if (this.name == search)
+                return $"{this.name}";
+            else
+                return null;
+
+        }
+
 
     }
 }

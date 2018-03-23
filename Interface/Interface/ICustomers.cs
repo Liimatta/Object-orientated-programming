@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    public interface ICustomers
+    interface ICustomers
     {
-        void AddCustomer();
+        void AddCustomer(List<Customer> customers);
 
         void PrintCustomers();
     }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    public interface IProducts:IProduct
-    {
-        void AddProduct();
+     interface IProducts:IProduct
+     {
+         void AddProduct(List<Product>product);
 
-        void PrintProducts();
-    }
+         void PrintProducts();
+     }
 }
