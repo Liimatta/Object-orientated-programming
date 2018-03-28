@@ -51,6 +51,8 @@ namespace BBANCheck
             int i = 12;
             int t = 0;
             int l = 0;
+            int s1 = 0;
+            int s2 = 0;
             do
             {
                 int k = (int)Char.GetNumericValue(checkbban[i]);
@@ -61,10 +63,23 @@ namespace BBANCheck
                 string T = t.ToString();
                 if (T.Length > 1)
                 {
+                    s1 = (int)Char.GetNumericValue(T[0]);
+                    s2 = (int)Char.GetNumericValue(T[1]);
 
+                    l = l + s1 + s2;
                 }
-                
-                l = l + t;
+                else
+                {
+                    l = l + t;
+                }
+                Console.WriteLine(l);
+                s1 = 0;
+                s2 = 0;
+                int n = i - 1;
+                k = (int)Char.GetNumericValue(checkbban[n]);
+                t = k;
+
+                l += t;
                 i -= 2;
                 
                 Console.WriteLine(l);
