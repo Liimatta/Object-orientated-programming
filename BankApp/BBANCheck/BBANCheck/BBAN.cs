@@ -53,13 +53,20 @@ namespace BBANCheck
             int l = 0;
             do
             {
-                int k = Convert.ToInt32(checkbban[i]);
+                int k = (int)Char.GetNumericValue(checkbban[i]);
                 Console.WriteLine(checkbban[i]);
                 Console.WriteLine(k);
                 t = k * 2;
+                
+                string T = t.ToString();
+                if (T.Length > 1)
+                {
+
+                }
+                
                 l = l + t;
-                i--;
-                i--;
+                i -= 2;
+                
                 Console.WriteLine(l);
                 Console.WriteLine(i);
             }
